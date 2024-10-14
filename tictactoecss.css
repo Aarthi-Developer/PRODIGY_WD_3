@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #74ebd5, #9face6);
+  color: #333;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Board Styling */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  background-color: #f7f7f7;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+/* Interactive Feedback for Cells */
+.cell:hover {
+  background-color: #e0f7fa;
+  transform: scale(1.05);
+}
+
+.cell:active {
+  background-color: #81d4fa;
+  transform: scale(1);
+}
+
+#restart {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#restart:hover {
+  background-color: #66bb6a;
+}
+
+#restart:active {
+  background-color: #388e3c;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .game-board {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  #restart {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+}
